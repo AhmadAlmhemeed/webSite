@@ -8,12 +8,15 @@
 }
  :root{
   --Dark-color:#16161a;
+  --text-color: #c4c9d1;
+  /* --Third-color:#2cb67d; */
+  --Second-color:#3d7eae;
 
  }
 /* Navbar style starts */
 .navBar{
   position: static;
-  background-color: #1e1e2b;
+  background-color: var(--Dark-color);
   border-bottom: 1px solid #959db1;
   box-shadow: 10px 10px 5px 12px #959db1;
   }
@@ -25,7 +28,7 @@
   padding: 10px;
 }
 .navBar .logo {
-  color: #956afa;
+  color: var(--Second-color);
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -34,7 +37,7 @@
     margin: auto;
 }
 .navBar li {
-  color: #c4c9d1;
+  color: var(--text-color);
   padding: 0 3px;
   list-style: none;
   display: inline-block;
@@ -45,7 +48,7 @@
   position: relative;
 }
 .navBar li:hover , .navBar li.active{
-  color: #956afa;
+  color: var(--Second-color);
 }
 
 .navBar li:focus:after,
@@ -62,7 +65,7 @@
   position: absolute;
   width: 0%;
   height: 2.4px;
-  background-color: #956afa;
+  background-color: var(--Second-color);
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: width, left;
@@ -358,7 +361,7 @@
   position: absolute;
   height: 3.5px;
   width: 100%;
-  background: #c4c9d1;
+  background: var(--text-color);
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -439,7 +442,7 @@
 }
 
 .dropDownMenue li:hover {
-  color: #c4c9d1;
+  color: var(--text-color);
   transition-delay: .5s;
 }
 
@@ -454,7 +457,7 @@
   bottom: 0;
   height: 0;
   width: 100%;
-  background-color: #956afa;
+  background-color: var(--Second-color);
   transition: .4s ease;
   z-index: -1;
 }
@@ -462,7 +465,7 @@
 .dropDownMenue li:hover::after {
   height: 100%;
   transition-delay: 0.4s;
-  color: aliceblue;
+  color: var(--text-color);
 }
 /* navbar style ends */
 /* about section style starts */
@@ -470,14 +473,14 @@
 
   width: 100%;
   height: calc(100vh - 60px);
-  background-color: #16161a;
+  background-color: var(--Dark-color);
   position: relative;
 }
 #particles-js{
   height: 100%;
   width: 100%;
-  color: white;
-  background-color: #1d1f2c;
+  color: var(--text-color);
+  background-color: var(--Dark-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -509,13 +512,13 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  color:#c4c9d1 !important;
+  color:var(--text-color);
   position: sticky;
 }
 .about-me > p{
 width: 50%;
 }
-.loader {
+.about-me .text-replace {
   color: rgb(124, 124, 124);
   font-family: "Poppins",sans-serif;
   font-weight: 500;
@@ -523,15 +526,13 @@ width: 50%;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 40px;
-  padding: 10px 10px 10px 0;
+  padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-radius: 8px;
 }
-.loader p{
-  margin-right: 5px;
-}
+
 
 .words {
   overflow: hidden;
@@ -541,7 +542,7 @@ width: 50%;
   display: block;
   height: 100%;
   padding-left: 6px;
-  color: #956afa;
+  color: var(--Second-color);
   animation: spin_4991 4s infinite;
 }
 
@@ -586,9 +587,111 @@ width: 50%;
     transform: translateY(-400%);
   }
 }
+/* about social media icons style */
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: rgba(100,77,237,0.08);
+    border-radius: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #fff;
+  }
+  .wrapper .linkedin:hover,
+  .wrapper .linkedin:hover .tooltip,
+  .wrapper .linkedin:hover .tooltip::before {
+    background: #0274b3;
+    color: #fff;
+  }
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: #16161a;
+    color: #fff;
+  }
+  
+  
 
 /* RESPONSIVE STYLE */
 @media (max-width:992px){
+  :root{
+    font-size: 14px;
+  }
   .navBar ul li,.navBar .theme-switch{
     display: none;
   }
