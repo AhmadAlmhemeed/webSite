@@ -1,4 +1,13 @@
-    // drop down menu script
+  // loader timeout
+  const loader = document.getElementById('loader-container');
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function(){
+    loader.classList.add('close')},2000)
+    yourFunctionToExecuteAfterDOMReady();
+  });
+  
+  
+   // drop down menu script
     const checkBox = document.getElementById('burger');
     const targetElement = document.getElementById('dropDownMenu');
 
