@@ -8,6 +8,7 @@
 }
 body{
   overflow-x: hidden;
+  background-color: var(--Dark-color);
 }
  :root{
   --Dark-color:#141b2d;
@@ -27,9 +28,9 @@ body{
   position: fixed;
   z-index: 1555;
   background-color: var(--Dark-color);
-  transition: display .8s;
- }
- #loader-container.close{
+  transition: display .8s ease;
+}
+#loader-container.close{
   display: none;
  }
  .loader {
@@ -845,9 +846,9 @@ width: 50%;
   #projects{
     width: 100%;
     height:100vh;
-    overflow-x: inherit;
+    /* overflow-x: inherit; */
     background-color: var(--Dark-color);
-    position: relative;
+    position:relative;
   }
   #projects .custom-shape-divider-top-1691329121 {
     position: absolute;
@@ -886,7 +887,6 @@ width: 50%;
   position: absolute;
   width: 100%;
   height:100vh;
-  overflow-x:unset;
   top: 0;
   left: 0;
   
@@ -1109,12 +1109,10 @@ border-radius: 25%; }
   fill: #333;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .projects .card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
-
 .projects .card__content {
   position: absolute;
   top: 0;
@@ -1128,29 +1126,24 @@ border-radius: 25%; }
   transform-origin: bottom;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .projects .card:hover .card__content {
   transform: rotateX(0deg);
 }
-
 .projects .card__title {
   margin: 0;
   font-size: 24px;
   color: #333;
   font-weight: 700;
 }
-
 .projects .card:hover svg {
   scale: 0;
 }
-
 .projects .card__description {
   margin: 10px 0 0;
   font-size: 14px;
   color: #777;
   line-height: 1.4;
 }
-
   /* projects section style ends */
   /* skills section style starts */
   #skills{
@@ -1174,22 +1167,21 @@ border-radius: 25%; }
     opacity: .5;
     color: var(--text-color);
     font-size: 50px;
-    /* border-radius: 10px; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
   }
-  /* .skills-icons .icon i{
-    font-size: 50px;
-    color: var(--Dark-color);
-  } */
-  
-  /* skills section ends starts */
-  
+  /* skills section ends ends */
 
+ 
 /* RESPONSIVE STYLE */
+@media (max-width:1350px){
+  #projects{
+    height: 150vh;
+  }
+  #projects .background{
+    height: 150vh;
+  }
+}
 @media (max-width:992px){
-  :root{
+  html{
     font-size: 14px;
   }
   .navBar ul li,.navBar .theme-switch{
@@ -1203,6 +1195,9 @@ border-radius: 25%; }
   }
   .about-me > p{
     width: 100%;
+    }
+    #projects{
+      height: 250vh;
     }
     #projects .background{
       height: 250vh;
