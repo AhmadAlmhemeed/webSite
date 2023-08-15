@@ -1146,16 +1146,37 @@ border-radius: 25%; }
 }
   /* projects section style ends */
   /* skills section style starts */
+  .custom-shape-divider-top-1692089686 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1692089686 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 155px;
+}
+
+.custom-shape-divider-top-1692089686 .shape-fill {
+    fill: var(--text-color);
+    opacity: .4;
+}
+
   #skills{
     background-color: var(--Dark-color);
     width: 100%;
-    height: 100vh;
+    height: 400px;
     position: relative;
   }
   .skills-icons {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 300px;
     overflow: hidden;
   }
   
@@ -1168,8 +1189,302 @@ border-radius: 25%; }
     color: var(--text-color);
     font-size: 50px;
   }
+  .skill-carts{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+   flex-wrap: wrap;
+   margin-top: 20px;
+   padding: 0;
+   
+  }
+  
+  .skill-carts .card {
+    filter: sepia(0.4);
+    width: 130px;
+    height: 150px;
+    background: var(--clr);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.4s ease-in-out;
+    z-index: 2;
+  }
+  
+  .skill-carts .card i {
+    font-size: 100px;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+  }
+  
+  .skill-carts .card .textBox {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.2s ease-in-out;
+    z-index: 2;
+  }
+  
+  .skill-carts .card .textBox > .text {
+    font-weight: bold;
+  }
+  
+  .skill-carts .card .textBox > .head {
+    font-size: 20px;
+  }
+  
+  .skill-carts .card .textBox > .level {
+    font-size: 17px;
+  }
+  
+  .skill-carts .card:hover > .textBox {
+    opacity: 1;
+  }
+  
+  .skill-carts .card:hover > i {
+    color: var(--clr);
+    height: 65%;
+    filter: blur(7px);
+    animation: anim 3s infinite;
+  }
+  
+  @keyframes anim {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-20px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .skill-carts .card:hover {
+    background-color: #313131;
+    transform: scale(1.04) rotate(-1deg);
+  }
+  
+  
+  
   /* skills section ends ends */
+  /* contact section starts */
+  #contact{
+    background-color: var(--Dark-color);
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 
+  }
+  .contact-menu{
+    position:relative;
+    width:280px;
+     height:280px;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+  }
+  
+  .contact-menu .contact-toggle{
+      position: relative;
+      height: 60px;
+      width: 60px;
+      background-color: beige;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: 1.25s;
+      z-index: 5;
+  }
+  .contact-menu.active .contact-toggle{
+      transform:rotate(360deg);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15),
+        0 0 0 2px #333,
+        0 0 0 8px #fff;
+    }
+    .contact-menu li{
+      position:absolute;
+      left:0;
+      list-style:none;
+      transition:0.5s;
+      transform:rotate(calc(360deg/8 * var(--i)));
+      transform-origin:140px;
+      scale:1;
+      transition-delay: calc(0.05s * var(--i));
+    }
+    .contact-menu.active li{
+      scale:0;
+    } 
+    .contact-menu li a{
+      text-decoration: none;
+      position:relative;
+      display:flex;
+     transform:rotate(calc(360deg/-8 * var(--i)));
+      width:60px;
+      height:60px;
+      background-color:var(--text-color);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      font-size:1.75rem;
+      color:var(--clr);
+       box-shadow:0 3px 4px rgba(0,0,0,0.15);
+      transition:0.5s;
+    }
+    .contact-menu li:hover a{
+      font-size:2.5rem;
+      box-shadow:0 0 0 2px var(--clr),
+        0 0 0 6px var(--text-color);
+    }
+    .contact-container {
+      width: 100%;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-radius: 3px;
+      /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    }
+    
+    .contact-container .form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .contact-container .input, textarea {
+      margin: 1em 0 1em 0;
+      width: 300px;
+      position: relative;
+    }
+    
+    .contact-container .input input, textarea {
+      font-size: 100%;
+      padding: 0.7em;
+      outline: none;
+      color: #e8e8e8;
+      border: none;
+      border-bottom: 2px solid #e8e8e8;
+      background: transparent;
+      border-radius: none;
+      width: 100%;
+      resize: none;
+    }
+    
+    .contact-container .input label {
+      font-size: 100%;
+      position: absolute;
+      left: 0;
+      color: #e8e8e8;
+      padding: 0.7em;
+      margin-left: 0.1em;
+      pointer-events: none;
+      transition: all 0.5s ease;
+      text-transform: uppercase;
+    }
+    
+    .contact-container .input :is(input:focus, input:valid)~label {
+      transform: translateY(-50%) scale(.9);
+      margin: 0em;
+      padding: 0.4em;
+      background: transparent;
+    }
+    
+    .contact-container .input textarea:focus ~ label,
+    .contact-container .input textarea:valid ~ label {
+      transform: translateY(-50%) scale(.9);
+      margin: 0em;
+      padding: 0.4em;
+      background: transparent;
+    }
+    
+    /* .contact-container .inputGroup :is(input:focus, input:valid) {
+      border-color: rgb(37, 37, 211);
+    } */
+    
+    .contact-container .form button {
+      color: #e8e8e8;
+      font-size: 15px;
+      align-self: flex-start;
+      padding: 0.6em;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 50px;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-container .form button:before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #e8e8e8;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .contact-container .form button:hover:before {
+      opacity: 0.2;
+    }
+    
+    .contact-container .form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    #footer{
+      background-color: var(--Dark-color);
+      opacity: .8;
+      color: var(--text-color);
+      text-align: center;
+      font-size: 1.2em;
+      padding: 25px 0;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px ;
+    }
+    #footer span{
+      color: var(--Second-color);
+      font-weight: bold;
+    }
+    .spikes {
+      position: relative;
+      background: var(--Dark-color);
+      height: 20px;
+      top: -25px;
+      rotate: 180deg;
+    }
+    
+    .spikes::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: -34%;
+      top: 100%;
+      z-index: 10;
+      display: block;
+      height: 20px;
+      background-size: 15px 100%;
+      background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);
+      background-position: 0 0;
+    }
+    
+    
+  /* contact section ends */
  
 /* RESPONSIVE STYLE */
 @media (max-width:1350px){
@@ -1178,6 +1493,9 @@ border-radius: 25%; }
   }
   #projects .background{
     height: 150vh;
+  }
+  #skills{
+    height: 500px;
   }
 }
 @media (max-width:992px){
@@ -1202,4 +1520,28 @@ border-radius: 25%; }
     #projects .background{
       height: 250vh;
     }
+    #skills{
+      height: 600px;
+    }
+    .skills-icons {
+      height: 550px;
+    }
+}
+@media (max-width:500px){
+  .wrapper{
+    padding-left: 0;
+    padding-top: 5px;
+  }
+  #skills{
+    height: 750px;
+  }
+  .skills-icons {
+    height: 650px;
+  }
+  .skill-carts{
+    gap: 15px;
+  }
+  .projects .card{
+    width: 300px;
+  }
 }

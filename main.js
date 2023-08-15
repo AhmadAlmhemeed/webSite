@@ -5,6 +5,61 @@
     loader.classList.add('close')},2000)
     yourFunctionToExecuteAfterDOMReady();
   });
+
+  //  nav item click event
+document.addEventListener("DOMContentLoaded", function() {
+  const navItems = document.querySelectorAll(".navLinks li");
+  navItems.forEach(function(item) {
+    item.addEventListener("click", function() {
+      navItems.forEach(function(navItem) {
+        navItem.classList.remove("active");
+      });
+
+      item.classList.add("active");
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const navItems = document.querySelectorAll(".navLinks li");
+  const sections = document.querySelectorAll("section");
+
+  // تحديث الحالة النشطة بناءً على موضع التمرير
+  function updateActiveNav() {
+    sections.forEach(function(section, index) {
+      const sectionTop = section.offsetTop ;
+      const sectionBottom = sectionTop + section.offsetHeight ;
+
+      if (window.scrollY >= sectionTop -150 && window.scrollY < sectionBottom) {
+        navItems.forEach(function(navItem) {
+          navItem.classList.remove("active");
+        });
+        navItems[index].classList.add("active");
+      }
+    });
+  }
+
+  // مستمع الأحداث للتمرير
+  window.addEventListener("scroll", updateActiveNav);
+
+  // مستمع الأحداث للنقر على عناصر القائمة
+  navItems.forEach(function(item, index) {
+    item.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      // انتقل إلى القسم المناسب عن طريق الانتقال إلى الجزء العلوي من القسم
+      const sectionTop = sections[index].offsetTop;
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth"
+      });
+    });
+  });
+
+  // تحديث الحالة النشطة عند تحميل الصفحة
+  updateActiveNav();
+});
+
+
   
   
    // drop down menu script
@@ -49,4 +104,9 @@ function moveIcon(icon) {
     icon.style.top = posY + 'px';
   }, 8);
 }
-
+// contact icons
+const menu=document.querySelector(".contact-menu");
+const toggle=document.querySelector(".contact-toggle");
+toggle.addEventListener("click",()=>{
+menu.classList.toggle("active");
+})
