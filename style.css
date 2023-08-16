@@ -16,7 +16,13 @@ body{
   /* --Third-color:#2cb67d; */
   --Second-color:#3d7eae;
   --first-color:#292f40;
+}
+.white-mode{
+  --Dark-color:#f4f4f4;
+  --text-color: #333;
+  --first-color:#ffffff;
 
+  
  }
  /* loader style starts */
  #loader-container{
@@ -176,8 +182,8 @@ body{
   top: 0;
   left: 0;
   background-color: var(--first-color);
-  border-bottom: 1px solid #959db1;
-  box-shadow: 10px .5px 70px 15px #010101b0;
+  border-bottom: 1px solid var(--text-color);
+  box-shadow: 1px .5px 15px 1px #010101b0;
   opacity: .9;
   }
 .navBar .container {
@@ -662,7 +668,7 @@ body{
 }
 
 .custom-shape-divider-bottom-1691192402 .shape-fill {
-  fill: #94A1B2;
+  fill: var(--first-color);
 }
 .about-me{
   display: flex;
@@ -756,7 +762,7 @@ width: 50%;
   
   .wrapper .icon {
     position: relative;
-    background: rgba(100,77,237,0.08);
+    background: var(--first-color);
     border-radius: 15px;
     margin: 10px;
     width: 50px;
@@ -868,7 +874,7 @@ width: 50%;
 }
 
 #projects .custom-shape-divider-top-1691329121 .shape-fill {
-    fill: #94A1B2;
+    fill: var(--first-color);
 }
 @keyframes animate {
   0%{
@@ -899,7 +905,7 @@ width: 50%;
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--first-color);
   animation: animate 18s linear infinite;
 }
 
@@ -1163,7 +1169,7 @@ border-radius: 25%; }
 }
 
 .custom-shape-divider-top-1692089686 .shape-fill {
-    fill: var(--text-color);
+    fill: var(--first-color);
     opacity: .4;
 }
 
@@ -1270,7 +1276,7 @@ border-radius: 25%; }
   }
   
   .skill-carts .card:hover {
-    background-color: #313131;
+    background-color: var(--first-color);
     transform: scale(1.04) rotate(-1deg);
   }
   
@@ -1296,12 +1302,12 @@ border-radius: 25%; }
       position: relative;
       height: 60px;
       width: 60px;
-      background-color: beige;
+      background-color: var(--first-color);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #333;
+      color: var(--text-color);
       font-size: 2rem;
       cursor: pointer;
       transition: 1.25s;
@@ -1333,7 +1339,7 @@ border-radius: 25%; }
      transform:rotate(calc(360deg/-8 * var(--i)));
       width:60px;
       height:60px;
-      background-color:var(--text-color);
+      background-color:var(--first-color);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -1346,7 +1352,7 @@ border-radius: 25%; }
     .contact-menu li:hover a{
       font-size:2.5rem;
       box-shadow:0 0 0 2px var(--clr),
-        0 0 0 6px var(--text-color);
+        0 0 0 6px var(--first-color);
     }
     .contact-container {
       width: 100%;
@@ -1374,9 +1380,9 @@ border-radius: 25%; }
       font-size: 100%;
       padding: 0.7em;
       outline: none;
-      color: #e8e8e8;
+      color: var(--text-color);
       border: none;
-      border-bottom: 2px solid #e8e8e8;
+      border-bottom: 2px solid var(--text-color);
       background: transparent;
       border-radius: none;
       width: 100%;
@@ -1387,7 +1393,7 @@ border-radius: 25%; }
       font-size: 100%;
       position: absolute;
       left: 0;
-      color: #e8e8e8;
+      color:var(--text-color);
       padding: 0.7em;
       margin-left: 0.1em;
       pointer-events: none;
@@ -1415,7 +1421,7 @@ border-radius: 25%; }
     } */
     
     .contact-container .form button {
-      color: #e8e8e8;
+      color: var(--text-color);
       font-size: 15px;
       align-self: flex-start;
       padding: 0.6em;
@@ -1449,7 +1455,7 @@ border-radius: 25%; }
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
     #footer{
-      background-color: var(--Dark-color);
+      background-color: var(--first-color);
       opacity: .8;
       color: var(--text-color);
       text-align: center;
@@ -1463,7 +1469,7 @@ border-radius: 25%; }
     }
     .spikes {
       position: relative;
-      background: var(--Dark-color);
+      background: var(--first-color);
       height: 20px;
       top: -25px;
       rotate: 180deg;
@@ -1479,10 +1485,9 @@ border-radius: 25%; }
       display: block;
       height: 20px;
       background-size: 15px 100%;
-      background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);
+      background-image: linear-gradient(135deg, var(--first-color) 25%, transparent 25%), linear-gradient(225deg, var(--first-color) 25%, transparent 25%);
       background-position: 0 0;
     }
-    
     
   /* contact section ends */
  

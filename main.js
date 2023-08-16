@@ -58,6 +58,11 @@ document.addEventListener("DOMContentLoaded", function() {
   // تحديث الحالة النشطة عند تحميل الصفحة
   updateActiveNav();
 });
+// dark mode switch
+const mode_switch = document.querySelector('.theme-switch__checkbox');
+mode_switch.addEventListener('click',()=>{
+  document.body.classList.toggle('white-mode');
+})
 
 
   
