@@ -59,14 +59,17 @@ document.addEventListener("DOMContentLoaded", function() {
   updateActiveNav();
 });
 // dark mode switch
-const mode_switch = document.querySelector('.theme-switch__checkbox');
+const mode_switch = document.querySelector('.theme-switch input');
+const mode_switch1 = document.querySelector('#theme-switch');
 mode_switch.addEventListener('click',()=>{
+  document.body.classList.toggle('white-mode');
+})
+mode_switch1.addEventListener('click',()=>{
   document.body.classList.toggle('white-mode');
 })
 
 
-  
-  
+
    // drop down menu script
     const checkBox = document.getElementById('burger');
     const targetElement = document.getElementById('dropDownMenu');
