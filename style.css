@@ -186,7 +186,7 @@ body{
   left: 0;
   background-color: var(--first-color);
   border-bottom: 1px solid var(--text-color);
-  box-shadow: 1px .5px 15px 1px #010101b0;
+  box-shadow: 0 0 150px 0 #010101b0;
   opacity: .9;
   }
 .navBar .container {
@@ -759,8 +759,9 @@ width: 50%;
     list-style: none;
     height: 120px;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 30px;
     font-family: "Poppins", sans-serif;
+        padding-left: 0;
   }
   
   .wrapper .icon {
@@ -778,6 +779,9 @@ width: 50%;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon:first-child{
+    margin-left: 0;
   }
   
   .wrapper .tooltip {
@@ -1201,11 +1205,44 @@ border-radius: 25%; }
   .skill-carts{
     display: flex;
     justify-content: center;
-    gap: 10px;
-   flex-wrap: wrap;
+    /* gap: 10px;
+   flex-wrap: wrap; */
    margin-top: 20px;
    padding: 0;
    
+  }
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    animation: slideAnimation 8s linear infinite;
+  }
+  
+  .slide {
+    /* flex: 0 0 25%; تعديل حجم الشريحة حسب الحاجة */
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .slide .card {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  
+  @keyframes slideAnimation {
+    0% {
+      transform: translateX(100%);
+    }
+    /* 50% {
+      transform: translateX(-110%);
+    } */
+    100% {
+      transform: translateX(-150%);
+    }
   }
   
   .skill-carts .card {
@@ -1371,11 +1408,12 @@ border-radius: 25%; }
     .contact-container .form {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
     
     .contact-container .input, textarea {
       margin: 1em 0 1em 0;
-      width: 300px;
+      width: 100%;
       position: relative;
     }
     
@@ -1393,7 +1431,7 @@ border-radius: 25%; }
     }
     
     .contact-container .input label {
-      font-size: 100%;
+      font-size: 20px;
       position: absolute;
       left: 0;
       color:var(--text-color);
@@ -1425,7 +1463,7 @@ border-radius: 25%; }
     
     .contact-container .form button {
       color: var(--text-color);
-      font-size: 15px;
+      font-size: 20px;
       align-self: flex-start;
       padding: 0.6em;
       border: none;
@@ -1464,7 +1502,7 @@ border-radius: 25%; }
       text-align: center;
       font-size: 1.2em;
       padding: 25px 0;
-      box-shadow:  0px -8px 10px var(--text-color);
+      box-shadow:  0 0 5px var(--text-color);
     }
     #footer span{
       color: var(--Second-color);
@@ -1481,9 +1519,9 @@ border-radius: 25%; }
   #projects .background{
     height: 150vh;
   }
-  #skills{
+  /* #skills{
     height: 500px;
-  }
+  } */
 }
 @media (max-width:992px){
   html{
@@ -1507,11 +1545,25 @@ border-radius: 25%; }
     #projects .background{
       height: 250vh;
     }
-    #skills{
+    /* #skills{
       height: 600px;
+    } */
+    @keyframes slideAnimation {
+      0% {
+        transform: translateX(100%);
+      }
+      /* 50% {
+        transform: translateX(-110%);
+      } */
+      100% {
+        transform: translateX(-210%);
+      }
     }
     .skills-icons {
       height: 550px;
+    }
+    .contact-container .input label {
+      font-size: 18px;
     }
 }
 @media (max-width:500px){
@@ -1519,7 +1571,7 @@ border-radius: 25%; }
     padding-left: 0;
     padding-top: 5px;
   }
-  #skills{
+  /* #skills{
     height: 750px;
   }
   .skills-icons {
@@ -1527,11 +1579,22 @@ border-radius: 25%; }
   }
   .skill-carts{
     gap: 15px;
-  }
+  } */
+  
   .projects .card{
     width: 300px;
   }
   .footer{
     padding: 15px 0;
   }
+  .about-me .text-replace{
+    font-size: 20px;
+  }
+  #projects{
+    height: 280vh;
+  }
+  #projects .background{
+    height: 280vh;
+  }
+ 
 }
